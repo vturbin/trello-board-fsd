@@ -1,0 +1,24 @@
+<div
+  [ngClass]="vertical ? 'input-field-wrapper--vertical' : 'input-field-wrapper'"
+>
+  <label for="login" [style.width]="labelWidth" class="inline-field-label">{{
+    label
+  }}</label>
+  <input
+    type="text"
+    pInputText
+    id="login"
+    styleClass="field-input"
+    [formControl]="ngControl.control"
+    [style.width]="inputWidth"
+    (blur)="onBlur.emit($event)"
+    (focus)="onFocus.emit($event)"
+  />
+</div>
+@if (ngControl.touched) {
+  @for (error of ngControl.errors | keyvalue; track ngControl.errors) {
+    <div [style.margin-left]="vertical ? '0' : labelWidth" class="field-error">
+      {{ error | mapErrorToText }}
+    </div>
+  }
+}
