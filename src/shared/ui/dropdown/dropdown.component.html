@@ -1,0 +1,10 @@
+<p-dropdown
+  [options]="options"
+  [checkmark]="true"
+  [optionLabel]="optionLabel"
+  [showClear]="clearable"
+  [formControl]="ngControl.control"
+  [placeholder]="placeholder"
+  (onChange)="onSelect.emit($event.value)"
+  (onClear)="onClear.emit()"
+/>

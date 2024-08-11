@@ -13,6 +13,8 @@ import { PrimeIcons } from 'primeng/api';
 import { IconComponent } from '../shared/ui/icon/icon.component';
 import { SpinnerComponent } from '../shared/ui/spinner/spinner.component';
 import { PageSpinnerComponent } from '../shared/ui/page-spinner/page-spinner.component';
+import { DropdownComponent } from '../shared/ui/dropdown/dropdown.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -26,16 +28,29 @@ import { PageSpinnerComponent } from '../shared/ui/page-spinner/page-spinner.com
     IconComponent,
     SpinnerComponent,
     PageSpinnerComponent,
+    DropdownComponent,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
+  public cities: { name: string; code: string }[] = [
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' },
+  ];
+
   ngOnInit(): void {
     setTimeout(() => {
       this.pageLoading = false;
       console.log(this.pageLoading);
     }, 1000);
+    this.loginFormGroup
+      .get('selectedCity')
+      ?.valueChanges.subscribe(value => console.log(value));
   }
   title = 'trello-board-fsd';
 
@@ -48,6 +63,7 @@ export class AppComponent implements OnInit {
       validators: [Validators.required, Validators.minLength(2)],
     }),
     password: new FormControl(null, Validators.required),
+    selectedCity: new FormControl<{ name: string; code: string } | null>(null),
   });
 
   public buttonPressed(): void {

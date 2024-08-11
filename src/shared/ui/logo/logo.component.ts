@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-ui-logo',
+  selector: 'app-logo',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './logo.component.html',
