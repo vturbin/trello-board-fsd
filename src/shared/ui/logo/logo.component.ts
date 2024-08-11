@@ -5,11 +5,11 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'app-ui-logo',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ui-logo.component.html',
-  styleUrl: './ui-logo.component.scss',
+  templateUrl: './logo.component.html',
+  styleUrl: './logo.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiLogoComponent {
+export class LogoComponent {
   @Input()
   public className: string = '';
 }

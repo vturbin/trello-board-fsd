@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ButtonComponent } from '../shared/ui/button/button.component';
-import { UiLogoComponent } from '../shared/ui/ui-logo/ui-logo.component';
+import { LogoComponent } from '../shared/ui/logo/logo.component';
 import { PrimeIcons } from 'primeng/api';
 import { IconComponent } from '../shared/ui/icon/icon.component';
 import { SpinnerComponent } from '../shared/ui/spinner/spinner.component';
@@ -22,7 +22,7 @@ import { PageSpinnerComponent } from '../shared/ui/page-spinner/page-spinner.com
     TextFieldComponent,
     ReactiveFormsModule,
     ButtonComponent,
-    UiLogoComponent,
+    LogoComponent,
     IconComponent,
     SpinnerComponent,
     PageSpinnerComponent,
