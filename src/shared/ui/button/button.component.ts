@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ButtonSeverity } from './button-severity.enum';
-import { Icon } from '../../utils/enums/icon.enum';
+import { PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-button',
@@ -35,7 +35,7 @@ export class ButtonComponent {
   public loading: boolean = false;
 
   @Input()
-  public icon: Icon | undefined = undefined;
+  public icon: PrimeIcons | undefined = undefined;
 
   @Output()
   public onClick = new EventEmitter();

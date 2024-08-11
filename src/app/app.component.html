@@ -1,8 +1,9 @@
 <app-ui-logo className="custom-class"></app-ui-logo>
+<app-icon [icon]="Icons.COG" fontSize="2rem" color="blue"></app-icon>
 <form class="auth-form" [formGroup]="loginFormGroup">
   <app-text-field formControlName="login" label="Login"></app-text-field>
   <app-button
-    [icon]="Icon.PiCheck"
+    [icon]="Icons.CHECK"
     label="Hello"
     (onClick)="buttonPressed()"
   ></app-button>

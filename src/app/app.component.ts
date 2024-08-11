@@ -8,8 +8,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { ButtonComponent } from '../shared/ui/button/button.component';
-import { Icon } from '../shared/utils/enums/icon.enum';
 import { UiLogoComponent } from '../shared/ui/ui-logo/ui-logo.component';
+import { PrimeIcons } from 'primeng/api';
+import { IconComponent } from '../shared/ui/icon/icon.component';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { UiLogoComponent } from '../shared/ui/ui-logo/ui-logo.component';
     ReactiveFormsModule,
     ButtonComponent,
     UiLogoComponent,
+    IconComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -27,7 +29,7 @@ import { UiLogoComponent } from '../shared/ui/ui-logo/ui-logo.component';
 export class AppComponent {
   title = 'trello-board-fsd';
 
-  public readonly Icon = Icon;
+  public readonly Icons = PrimeIcons;
 
   public loginFormGroup = new FormGroup({
     login: new FormControl(null, {
