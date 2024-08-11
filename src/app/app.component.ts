@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { ButtonComponent } from '../shared/ui/button/button.component';
 import { Icon } from '../shared/utils/enums/icon.enum';
+import { UiLogoComponent } from '../shared/ui/ui-logo/ui-logo.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { Icon } from '../shared/utils/enums/icon.enum';
     TextFieldComponent,
     ReactiveFormsModule,
     ButtonComponent,
+    UiLogoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

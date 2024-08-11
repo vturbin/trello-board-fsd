@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+/* Gradient text styling */
+.gradient-text {
+  font-weight: 800; /* Equivalent to font-extrabold */
+  background: linear-gradient(
+    135deg,
+    #14b8a6 40%,
+    #60a5fa
+  ); /* Teal to blue gradient */
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: text;
+}
