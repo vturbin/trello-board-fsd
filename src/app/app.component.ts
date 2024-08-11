@@ -7,16 +7,25 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { ButtonComponent } from '../shared/ui/button/button.component';
+import { Icon } from '../shared/utils/enums/icon.enum';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TextFieldComponent, ReactiveFormsModule],
+  imports: [
+    RouterOutlet,
+    TextFieldComponent,
+    ReactiveFormsModule,
+    ButtonComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'trello-board-fsd';
+
+  public readonly Icon = Icon;
 
   public loginFormGroup = new FormGroup({
     login: new FormControl(null, {
@@ -24,4 +33,8 @@ export class AppComponent {
     }),
     password: new FormControl(null, Validators.required),
   });
+
+  public buttonPressed(): void {
+    console.log('button pressed');
+  }
 }

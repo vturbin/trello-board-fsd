@@ -1,3 +1,8 @@
 <form class="auth-form" [formGroup]="loginFormGroup">
   <app-text-field formControlName="login" label="Login"></app-text-field>
+  <app-button
+    [icon]="Icon.PiCheck"
+    label="Hello"
+    (onClick)="buttonPressed()"
+  ></app-button>
 </form>
