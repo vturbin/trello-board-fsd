@@ -1,0 +1,9 @@
+<div
+  *ngIf="isShown"
+  [ngClass]="[
+    'fixed left-0 top-0 right-0 bottom-0 flex justify-content-center align-items-center bg-gray-100',
+    className,
+  ]"
+>
+  <app-spinner class="text-teal-600" [fontSize]="'3rem'"></app-spinner>
+</div>

@@ -11,5 +11,5 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class UiLogoComponent {
   @Input()
-  public className: string | undefined;
+  public className: string = '';
 }

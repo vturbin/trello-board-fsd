@@ -1,16 +1,14 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { PrimeIcons } from 'primeng/api';
 
 @Component({
-  selector: 'app-icon',
+  selector: 'app-spinner',
   standalone: true,
-  templateUrl: './icon.component.html',
+  imports: [],
+  templateUrl: './spinner.component.html',
+  styleUrl: './spinner.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconComponent {
-  @Input({ required: true })
-  public icon!: PrimeIcons;
-
+export class SpinnerComponent {
   /** Requires font size string in rem or px, i.e '1.5rem' */
   @Input()
   public fontSize?: string;

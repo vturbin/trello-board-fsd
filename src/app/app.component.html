@@ -1,5 +1,7 @@
 <app-ui-logo className="custom-class"></app-ui-logo>
 <app-icon [icon]="Icons.COG" fontSize="2rem" color="blue"></app-icon>
+<app-spinner fontSize="2rem"></app-spinner>
+<app-page-spinner [isLoading]="pageLoading"></app-page-spinner>
 <form class="auth-form" [formGroup]="loginFormGroup">
   <app-text-field formControlName="login" label="Login"></app-text-field>
   <app-button
