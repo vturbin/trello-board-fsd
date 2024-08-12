@@ -16,6 +16,8 @@ import { PageSpinnerComponent } from '../shared/ui/page-spinner/page-spinner.com
 import { DropdownComponent } from '../shared/ui/dropdown/dropdown.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/ui/header/header.component';
+import { ImageSelectComponent } from '../shared/ui/image-select/image-select.component';
+import { getAvatarUrl } from '../entities/user/ui/get-avatar-url';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +34,7 @@ import { HeaderComponent } from '../shared/ui/header/header.component';
     DropdownComponent,
     CommonModule,
     HeaderComponent,
+    ImageSelectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -56,9 +59,13 @@ export class AppComponent implements OnInit {
   }
   title = 'trello-board-fsd';
 
+  public avatarUrl = getAvatarUrl;
+
   public readonly Icons = PrimeIcons;
 
   public pageLoading = true;
+
+  public images = Array.from({ length: 8 }, (_, i) => i + 1);
 
   public loginFormGroup = new FormGroup({
     login: new FormControl(null, {
@@ -70,5 +77,9 @@ export class AppComponent implements OnInit {
 
   public buttonPressed(): void {
     console.log('button pressed');
+  }
+
+  public handleImageChange(image: string | number): void {
+    console.log(image);
   }
 }

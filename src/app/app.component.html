@@ -31,3 +31,11 @@
     (onClick)="buttonPressed()"
   ></app-button>
 </form>
+<app-image-select
+  [label]="'Select an Image'"
+  [images]="images"
+  [getSrc]="avatarUrl"
+  (onChange)="handleImageChange($event)"
+  [error]="'Please select an image'"
+>
+</app-image-select>

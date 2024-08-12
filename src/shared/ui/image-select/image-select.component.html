@@ -1,0 +1,18 @@
+<div [ngClass]="['flex flex-column gap-2', className ?? '']">
+  <div class="text-base">{{ label }}</div>
+  <div class="flex gap-2">
+    <button
+      *ngFor="let image of images; let i = index"
+      [ngClass]="{
+        'selected-image': image === value,
+        'image-button': image !== value,
+      }"
+      class="p-0"
+      type="button"
+      (click)="onSelect(image)"
+    >
+      <img class="w-3rem h-3rem" [src]="getSrc(image)" />
+    </button>
+  </div>
+  <div *ngIf="error && !value" class="text-sm text-pink-400">{{ error }}</div>
+</div>
