@@ -1,5 +1,13 @@
-<app-page-spinner [isLoading]="pageLoading"></app-page-spinner>
-<app-logo className="custom-class"></app-logo>
+<app-header>
+  <ng-container links>
+    <a href="#" class="p-mr-2">Link 1</a>
+    <a href="#" class="p-mr-2">Link 2</a>
+  </ng-container>
+  <ng-container right>
+    <button class="p-button p-button-primary">Sign In</button>
+  </ng-container>
+</app-header>
+<app-page-spinner [isLoading]="pageLoading"> </app-page-spinner>
 <app-icon [icon]="Icons.COG" fontSize="2rem" color="blue"></app-icon>
 <app-spinner fontSize="2rem"></app-spinner>
 <form class="auth-form" [formGroup]="loginFormGroup">

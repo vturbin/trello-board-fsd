@@ -15,6 +15,7 @@ import { SpinnerComponent } from '../shared/ui/spinner/spinner.component';
 import { PageSpinnerComponent } from '../shared/ui/page-spinner/page-spinner.component';
 import { DropdownComponent } from '../shared/ui/dropdown/dropdown.component';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../shared/ui/header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { CommonModule } from '@angular/common';
     PageSpinnerComponent,
     DropdownComponent,
     CommonModule,
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -1,0 +1,18 @@
+<header
+  [ngClass]="[
+    'px-4 py-5 border-bottom-1 border-gray-300 d-flex align-items-center justify-content-between bg-white',
+    'grid grid-nogutter col-12',
+    'dark:border-gray-700 dark:bg-gray-800',
+    className ?? '',
+  ]"
+>
+  <div class="col grid align-items-center">
+    <app-logo></app-logo>
+  </div>
+  <div class="col grid align-items-center justify-content-center">
+    <ng-content select="[links]"></ng-content>
+  </div>
+  <div class="col grid align-items-center justify-content-end">
+    <ng-content select="[right]"></ng-content>
+  </div>
+</header>
