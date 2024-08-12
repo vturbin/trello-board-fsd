@@ -27,6 +27,12 @@ export class DropdownComponent<T> {
 
   @Input({ required: true }) public optionLabel!: string;
 
+  @Input() public vertical = false;
+
+  @Input() public label?: string;
+
+  @Input() public labelWidth = '7rem';
+
   @Input() public clearable?: boolean;
 
   @Output() onSelect: EventEmitter<T> = new EventEmitter();

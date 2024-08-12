@@ -5,6 +5,7 @@
     display: inline-flex;
     align-items: center;
     width: 100%;
+
     &--vertical {
       display: block;
     }
@@ -12,6 +13,7 @@
   .inline-field-label {
     flex-shrink: 0;
     display: inline-block;
+    margin-bottom: 0.5rem;
   }
 
   .field-error {
