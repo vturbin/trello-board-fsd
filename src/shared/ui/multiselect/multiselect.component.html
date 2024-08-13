@@ -1,0 +1,20 @@
+<div
+  [ngClass]="vertical ? 'input-field-wrapper--vertical' : 'input-field-wrapper'"
+>
+  <label
+    for="login"
+    [style.width]="labelWidth"
+    [ngClass]="vertical ? 'inline-field-label--vertical' : 'inline-field-label'"
+    >{{ label }}</label
+  >
+  <p-multiSelect
+    display="chip"
+    [options]="options"
+    [formControl]="ngControl.control"
+    [optionLabel]="optionLabel"
+    [showClear]="clearable"
+    [placeholder]="placeholder"
+    (onClear)="onClear.emit()"
+    (onChange)="onSelect.emit($event.value)"
+  />
+</div>

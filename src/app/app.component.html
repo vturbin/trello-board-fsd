@@ -30,6 +30,15 @@
     [icon]="Icons.CHECK"
     (onClick)="buttonPressed()"
   ></app-button>
+  <app-multiselect
+    formControlName="selectedCities"
+    placeholder="Select cities"
+    optionLabel="name"
+    label="Cities"
+    [vertical]="true"
+    [options]="cities"
+    [clearable]="true"
+  ></app-multiselect>
 </form>
 <app-image-select
   [label]="'Select an Image'"

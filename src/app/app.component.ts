@@ -20,6 +20,7 @@ import { ImageSelectComponent } from '../shared/ui/image-select/image-select.com
 import { getAvatarUrl } from '../entities/user/ui/get-avatar-url';
 import { ModalComponent } from '../shared/ui/modal/modal.component';
 import { ButtonModule } from 'primeng/button';
+import { MultiselectComponent } from '../shared/ui/multiselect/multiselect.component';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +40,7 @@ import { ButtonModule } from 'primeng/button';
     ImageSelectComponent,
     ModalComponent,
     ButtonModule,
+    MultiselectComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -79,6 +81,9 @@ export class AppComponent implements OnInit {
     }),
     password: new FormControl(null, Validators.required),
     selectedCity: new FormControl<{ name: string; code: string } | null>(null),
+    selectedCities: new FormControl<{ name: string; code: string }[] | null>([
+      { name: 'Istanbul', code: 'IST' },
+    ]),
   });
 
   public buttonPressed(): void {
