@@ -1,0 +1,25 @@
+<p-dialog
+  [(visible)]="display"
+  [modal]="true"
+  [resizable]="false"
+  [draggable]="false"
+  (onHide)="closeModal()"
+>
+  <ng-container *ngIf="headerTemplate">
+    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="bodyTemplate">
+    <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="footerTemplate">
+    <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+  </ng-container>
+
+  <ng-container *ngIf="!footerTemplate">
+    <div class="flex justify-content-end flex-wrap">
+      <app-button label="Close" (onClick)="closeModal()"></app-button>
+    </div>
+  </ng-container>
+</p-dialog>

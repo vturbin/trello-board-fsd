@@ -39,3 +39,26 @@
   [error]="'Please select an image'"
 >
 </app-image-select>
+<button pButton type="button" label="Show Modal" (click)="showModal()"></button>
+
+<app-modal [display]="isModalVisible" (onClose)="isModalVisible = false">
+  <ng-template #header>
+    <h3>Modal Header</h3>
+  </ng-template>
+
+  <ng-template #body>
+    <p>This is the modal body content.</p>
+  </ng-template>
+
+  <ng-template #footer>
+    <div class="flex justify-content-end flex-wrap">
+      <button
+        pButton
+        type="button"
+        (click)="closeModal()"
+        label="Close"
+        class="p-button-text"
+      ></button>
+    </div>
+  </ng-template>
+</app-modal>

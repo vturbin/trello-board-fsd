@@ -18,6 +18,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/ui/header/header.component';
 import { ImageSelectComponent } from '../shared/ui/image-select/image-select.component';
 import { getAvatarUrl } from '../entities/user/ui/get-avatar-url';
+import { ModalComponent } from '../shared/ui/modal/modal.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +37,8 @@ import { getAvatarUrl } from '../entities/user/ui/get-avatar-url';
     CommonModule,
     HeaderComponent,
     ImageSelectComponent,
+    ModalComponent,
+    ButtonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -63,6 +67,8 @@ export class AppComponent implements OnInit {
 
   public readonly Icons = PrimeIcons;
 
+  public isModalVisible: boolean = false;
+
   public pageLoading = true;
 
   public images = Array.from({ length: 8 }, (_, i) => i + 1);
@@ -81,5 +87,13 @@ export class AppComponent implements OnInit {
 
   public handleImageChange(image: string | number): void {
     console.log(image);
+  }
+
+  showModal() {
+    this.isModalVisible = true;
+  }
+
+  closeModal() {
+    this.isModalVisible = false;
   }
 }
