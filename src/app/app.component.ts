@@ -17,10 +17,10 @@ import { DropdownComponent } from '../shared/ui/dropdown/dropdown.component';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/ui/header/header.component';
 import { ImageSelectComponent } from '../shared/ui/image-select/image-select.component';
-import { getAvatarUrl } from '../entities/user/ui/get-avatar-url';
 import { ModalComponent } from '../shared/ui/modal/modal.component';
 import { ButtonModule } from 'primeng/button';
 import { MultiselectComponent } from '../shared/ui/multiselect/multiselect.component';
+import { getAvatarUrl } from '../entities/user';
 
 @Component({
   selector: 'app-root',
