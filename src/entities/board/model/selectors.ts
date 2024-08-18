@@ -1,5 +1,5 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { adapter, BoardState } from './boards.store';
+import { adapter, BoardState } from './store';
 
 export const { selectAll, selectEntities, selectIds, selectTotal } =
   adapter.getSelectors();

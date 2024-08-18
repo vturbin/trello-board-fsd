@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid';
 import * as BoardActions from './actions';
 
 import { api } from '../../../shared/api';
-import { BoardState } from './boards.store';
+import { BoardState } from './store';
 import { selectBoardById } from './selectors';
 
 @Injectable()
