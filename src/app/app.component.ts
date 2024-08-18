@@ -21,6 +21,7 @@ import { ModalComponent } from '../shared/ui/modal/modal.component';
 import { ButtonModule } from 'primeng/button';
 import { MultiselectComponent } from '../shared/ui/multiselect/multiselect.component';
 import { getAvatarUrl } from '../entities/user';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -41,6 +42,7 @@ import { getAvatarUrl } from '../entities/user';
     ModalComponent,
     ButtonModule,
     MultiselectComponent,
+    TranslateModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

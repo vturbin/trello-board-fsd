@@ -1,0 +1,7 @@
+{
+  "sign-in": "Anmelden",
+  "sign-out": "Abmelden",
+  "sign-in-success": "Anmeldung erfolgreich",
+  "sign-in-error": "Falscher Benutzername oder Passwort",
+  "password-label": "Passwort"
+}
