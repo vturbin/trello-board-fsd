@@ -1,30 +1,30 @@
 :host {
   display: block;
+}
 
-  .input-field-wrapper {
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
+.input-field-wrapper {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
 
-    &--vertical {
-      display: block;
-    }
+  &--vertical {
+    display: block;
   }
-  .inline-field-label {
-    flex-shrink: 0;
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
+}
+.inline-field-label {
+  flex-shrink: 0;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
 
-  .field-error {
-    color: red;
-    font-size: small;
-    margin-top: 5px;
-  }
+.field-error {
+  color: red;
+  font-size: small;
+  margin-top: 5px;
+}
 
-  .field-input {
-    &.p-inputtext {
-      width: inherit;
-    }
+.field-input {
+  &.p-inputtext {
+    width: inherit;
   }
 }

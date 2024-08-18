@@ -22,6 +22,7 @@ import { ButtonModule } from 'primeng/button';
 import { MultiselectComponent } from '../shared/ui/multiselect/multiselect.component';
 import { getAvatarUrl } from '../entities/user';
 import { TranslateModule } from '@ngx-translate/core';
+import { PasswordComponent } from '../shared/ui/password/password.component';
 
 @Component({
   selector: 'app-root',
@@ -43,6 +44,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ButtonModule,
     MultiselectComponent,
     TranslateModule,
+    PasswordComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
