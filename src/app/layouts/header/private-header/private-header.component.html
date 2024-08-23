@@ -5,14 +5,17 @@
       routerLinkActive="underline"
       class="p-link link"
     >
-      {{ 'links.users' | translate }}
+      {{ "links.users" | translate }}
     </a>
     <a
       [routerLink]="ROUTER_PATHS.BOARDS"
       routerLinkActive="underline"
       class="p-link link"
     >
-      {{ 'links.boards' | translate }}
+      {{ "links.boards" | translate }}
     </a>
+  </div>
+  <div right>
+    <app-sign-out-button></app-sign-out-button>
   </div>
 </app-header>

@@ -1,16 +1,23 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
-import { ROUTER_PATHS } from '@shared/constants';
-import { HeaderComponent } from '@shared/ui/header';
+import { CommonModule } from "@angular/common";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { SignOutButtonComponent } from "@features/auth";
+import { TranslateModule } from "@ngx-translate/core";
+import { ROUTER_PATHS } from "@shared/constants";
+import { HeaderComponent } from "@shared/ui/header";
 
 @Component({
-  selector: 'app-private-header',
+  selector: "app-private-header",
   standalone: true,
-  imports: [CommonModule, HeaderComponent, RouterModule, TranslateModule],
-  templateUrl: './private-header.component.html',
-  styleUrl: './private-header.component.scss',
+  imports: [
+    CommonModule,
+    HeaderComponent,
+    RouterModule,
+    TranslateModule,
+    SignOutButtonComponent,
+  ],
+  templateUrl: "./private-header.component.html",
+  styleUrl: "./private-header.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PrivateHeaderComponent {
