@@ -1,7 +1,12 @@
 {
   "sign-in": "Anmelden",
   "sign-out": "Abmelden",
-  "sign-in-success": "Anmeldung erfolgreich",
+  "sign-in-success": "Anmeldung ist erfolgreich",
   "sign-in-error": "Falscher Benutzername oder Passwort",
-  "password-label": "Passwort"
+  "password-label": "Passwort",
+  "welcome": "Wilkommen!",
+  "links": {
+    "users": "Benutzer",
+    "boards": "Boards"
+  }
 }

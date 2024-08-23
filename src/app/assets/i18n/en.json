@@ -1,7 +1,12 @@
 {
   "sign-in": "Sign in",
   "sign-out": "Sign out",
-  "sign-in-success": "Sign in success",
+  "sign-in-success": "Successfully signed in",
   "sign-in-error": "Wrong username or password",
-  "password-label": "Password"
+  "password-label": "Password",
+  "welcome": "Welcome!",
+  "links": {
+    "users": "Users",
+    "boards": "Boards"
+  }
 }
