@@ -1,0 +1,18 @@
+<app-header>
+  <div links class="text-lg flex gap-5">
+    <a
+      [routerLink]="ROUTER_PATHS.USERS"
+      routerLinkActive="underline"
+      class="p-link link"
+    >
+      {{ 'links.users' | translate }}
+    </a>
+    <a
+      [routerLink]="ROUTER_PATHS.BOARDS"
+      routerLinkActive="underline"
+      class="p-link link"
+    >
+      {{ 'links.boards' | translate }}
+    </a>
+  </div>
+</app-header>
