@@ -1,0 +1,23 @@
+<form [formGroup]="loginFormGroup">
+  <div class="flex flex-column gap-3">
+    <app-text-field
+      formControlName="email"
+      label="Email"
+      [vertical]="true"
+    ></app-text-field>
+    <app-password
+      formControlName="password"
+      [label]="'password-label' | translate"
+      [vertical]="true"
+    ></app-password>
+    <app-button
+      [label]="'sign-in' | translate"
+      [loading]="(signInService.isLoading$ | async) ?? false"
+      (onClick)="onSubmit()"
+    ></app-button>
+  </div>
+
+  @if (signInService.error$ | async) {
+    <p class="text-red-500">{{ signInService.error$ | async }}</p>
+  }
+</form>
