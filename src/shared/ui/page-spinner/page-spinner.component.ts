@@ -18,7 +18,7 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageSpinnerComponent implements OnChanges, OnDestroy {
-  @Input() isLoading: boolean | undefined;
+  @Input() isLoading: boolean | null = false;
   @Input() className: string = '';
 
   isShown: boolean = true;

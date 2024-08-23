@@ -26,7 +26,6 @@ import { PasswordModule } from 'primeng/password';
   templateUrl: './password.component.html',
   hostDirectives: [NoopValueAccessorDirective],
   styleUrl: './password.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PasswordComponent {
   @Input({ required: true }) public label!: string;

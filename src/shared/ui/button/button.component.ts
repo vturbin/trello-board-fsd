@@ -35,6 +35,9 @@ export class ButtonComponent {
   public loading: boolean = false;
 
   @Input()
+  public width: string = 'auto';
+
+  @Input()
   public icon: PrimeIcons | undefined = undefined;
 
   @Output()

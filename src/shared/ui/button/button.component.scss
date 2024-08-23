@@ -1,3 +1,7 @@
-:host {
+:host ::ng-deep {
   display: inline-block;
+
+  .p-button {
+    width: 100%;
+  }
 }
