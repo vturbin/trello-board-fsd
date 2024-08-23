@@ -1,6 +1,9 @@
 // browser.ts
-import { setupWorker } from "msw/browser";
+import { setupWorker } from 'msw/browser';
 
-import { getHandlers } from "./handlers";
+import { getHandlers } from './handlers';
 
-export const worker = setupWorker(...(await getHandlers()));
+export async function initWorker() {
+  const handlers = await getHandlers();
+  return setupWorker(...handlers);
+}
