@@ -1,4 +1,16 @@
-<app-header>
+<p-toast />
+@if (session$ | async) {
+  <app-private-header />
+} @else {
+  <app-public-header />
+}
+
+<main class="flex-grow flex flex-col">
+  <router-outlet></router-outlet>
+</main>
+
+<app-page-spinner [isLoading]="pageLoading$ | async"> </app-page-spinner>
+<!-- <app-header>
   <ng-container links>
     <a href="#" class="p-mr-2">Link 1</a>
     <a href="#" class="p-mr-2">Link 2</a>
@@ -75,4 +87,4 @@
       ></button>
     </div>
   </ng-template>
-</app-modal>
+</app-modal> -->
