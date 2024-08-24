@@ -57,31 +57,17 @@ import { ROUTER_PATHS } from "@shared/constants";
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnInit {
   protected pageLoading$: Observable<boolean> = of(true);
   protected session$: Observable<Session | undefined>;
-  private subscription = new Subscription();
 
   constructor(
     private translateService: TranslateService,
     private store: Store,
-    private router: Router,
   ) {
     this.store.dispatch(loadSession());
     this.pageLoading$ = this.store.select(selectIsLoading);
     this.session$ = this.store.select(selectCurrentSession);
-
-    //
-    this.subscription.add(
-      this.session$.subscribe(session => {
-        if (!session) {
-          this.router.navigate([ROUTER_PATHS.SIGN_IN]);
-        }
-      }),
-    );
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {
