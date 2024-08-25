@@ -1,13 +1,12 @@
-import { createSelector, createFeatureSelector } from '@ngrx/store';
-import { UsersState } from './store';
-import { User } from './types';
+import { createSelector, createFeatureSelector } from "@ngrx/store";
+import { UsersState } from "./store";
+import { User } from "./types";
 
-export const selectUsersState = createFeatureSelector<UsersState>('users');
+export const selectUsersState = createFeatureSelector<UsersState>("users");
 
-export const selectAllUsers = createSelector(
-  selectUsersState,
-  state => state.users,
-);
+export const selectAllUsers = createSelector(selectUsersState, state => {
+  return state.users;
+});
 
 export const selectUserById = (userId: string) =>
   createSelector(selectUsersState, state =>

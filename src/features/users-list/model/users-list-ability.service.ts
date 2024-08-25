@@ -33,7 +33,6 @@ export class UsersListAbilityService implements OnDestroy {
           });
         }
         this.ability.update(rules);
-        console.log(this.ability);
       }),
     );
   }

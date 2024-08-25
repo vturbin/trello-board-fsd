@@ -27,6 +27,7 @@ import {
 import { Observable, of } from "rxjs";
 import { PublicHeaderComponent } from "./layouts/header/public-header/public-header.component";
 import { PrivateHeaderComponent } from "./layouts/header/private-header/private-header.component";
+import { ConfirmDialogModule } from "primeng/confirmdialog";
 
 @Component({
   selector: "app-root",
@@ -52,6 +53,7 @@ import { PrivateHeaderComponent } from "./layouts/header/private-header/private-
     PublicHeaderComponent,
     PrivateHeaderComponent,
     ToastModule,
+    ConfirmDialogModule,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",

@@ -1,6 +1,6 @@
-import { createReducer, on } from '@ngrx/store';
-import { User } from './types';
-import * as UsersActions from './actions';
+import { createReducer, on } from "@ngrx/store";
+import { User } from "./types";
+import * as UsersActions from "./actions";
 
 export interface UsersState {
   users: User[];

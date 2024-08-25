@@ -3,5 +3,9 @@
 
   .p-button {
     width: 100%;
+
+    &.p-button-icon-only {
+      width: 3rem;
+    }
   }
 }

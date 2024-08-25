@@ -1,12 +1,26 @@
-<p-button
-  pRipple
-  [label]="label"
-  [icon]="'' + icon"
-  [severity]="severity"
-  [disabled]="disabled"
-  [outlined]="outlined"
-  [style.display]="'block'"
-  [style.width]="width"
-  [loading]="loading"
-  (onClick)="onClick.emit()"
-></p-button>
+@if (displayAsIcon) {
+  <p-button
+    [icon]="'' + icon"
+    [rounded]="true"
+    [outlined]="true"
+    [text]="true"
+    [severity]="severity"
+    [style.display]="'block'"
+    [style.width]="width"
+    (onClick)="onClick.emit()"
+    size="large"
+  />
+} @else {
+  <p-button
+    pRipple
+    [label]="label"
+    [icon]="'' + icon"
+    [severity]="severity"
+    [disabled]="disabled"
+    [outlined]="outlined"
+    [style.display]="'block'"
+    [style.width]="width"
+    [loading]="loading"
+    (onClick)="onClick.emit()"
+  ></p-button>
+}

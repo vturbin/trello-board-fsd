@@ -13,7 +13,7 @@ import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { HttpClient, provideHttpClient } from "@angular/common/http";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { ToastService } from "@shared/ui/toast/toast.service";
-import { MessageService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 import { UsersEffects, usersReducer } from "@entities/user";
 import { SessionEffects, sessionReducer } from "@entities/session";
 import { BoardEffects, boardReducer } from "@entities/board";
@@ -33,7 +33,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(),
     provideHttpClient(),
     provideStore({
-      user: usersReducer,
+      users: usersReducer,
       session: sessionReducer,
       boards: boardReducer,
       task: tasksReducer,
@@ -41,6 +41,7 @@ export const appConfig: ApplicationConfig = {
     provideEffects([UsersEffects, SessionEffects, TasksEffects, BoardEffects]),
     ToastService,
     MessageService,
+    ConfirmationService,
     importProvidersFrom(
       TranslateModule.forRoot({
         defaultLanguage: "en",

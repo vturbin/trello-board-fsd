@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { PrimeIcons } from 'primeng/api';
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { PrimeIcons } from "primeng/api";
 
 @Component({
-  selector: 'app-icon',
+  selector: "app-icon",
   standalone: true,
-  templateUrl: './icon.component.html',
+  templateUrl: "./icon.component.html",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconComponent {

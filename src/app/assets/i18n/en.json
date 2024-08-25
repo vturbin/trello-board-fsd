@@ -32,5 +32,15 @@
   },
   "user-creation": "User Creation",
   "user-creation-success": "User has been created successfully",
-  "user-creation-failure": "User could not be created"
+  "user-creation-failure": "User could not be created",
+  "yes": "Yes",
+  "no": "No",
+  "remove-user-confirmation": {
+    "header": "Remove User",
+    "message": "Are you sure you want to delete user?"
+  },
+  "user-deletion": "User Deletion",
+  "user-deletion-success": "User has been deleted successfully",
+  "user-deletion-failure": "User could not be deleted",
+  "all-users": "All users"
 }
