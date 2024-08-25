@@ -1,0 +1,20 @@
+<div class="flex gap-2 align-items-center">
+  <img
+    [src]="getAvatarUrl(avatarId)"
+    [ngClass]="{
+      'w-2rem h-2rem': size === 'sm',
+      'w-3rem h-3rem': size === 'md',
+      'w-4rem h-4rem': size === 'lg',
+    }"
+  />
+  <div
+    [ngClass]="{
+      'text-lg': size === 'sm',
+      'text-lg': size === 'md',
+      'text-xl': size === 'lg',
+      'white-space-nowrap overflow-hidden text-overflow-ellipsis min-w-50': true,
+    }"
+  >
+    {{ name }}
+  </div>
+</div>
