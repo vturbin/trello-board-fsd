@@ -1,6 +1,6 @@
 <div [ngClass]="['flex flex-column gap-2', className ?? '']">
   <div class="text-base">{{ label }}</div>
-  <div class="flex gap-2">
+  <div class="flex gap-2 flex-wrap">
     <button
       *ngFor="let image of images; let i = index"
       [ngClass]="{
@@ -14,5 +14,5 @@
       <img class="w-3rem h-3rem" [src]="getSrc(image)" />
     </button>
   </div>
-  <div *ngIf="error && !value" class="text-sm text-pink-400">{{ error }}</div>
+  <div *ngIf="error && !value" class="text-sm field-error">{{ error }}</div>
 </div>

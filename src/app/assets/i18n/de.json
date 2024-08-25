@@ -8,5 +8,29 @@
   "links": {
     "users": "Benutzer",
     "boards": "Boards"
-  }
+  },
+  "user-roles": {
+    "user": "Benutzer",
+    "admin": "Admin"
+  },
+  "user-create-form": {
+    "password": "Passwort",
+    "name": "Name des neuen Nutzers",
+    "user-role": "Rolle des Nutzers"
+  },
+  "create-user": "Benutzer anlegen",
+  "select-avatar": "Avatar auswählen",
+  "select-avatar-error": "Bitte Avatar auswählen",
+  "create": "Anlegen",
+  "validation-errors": {
+    "required": "Dieses Feld ist erforderlich",
+    "email": "Das Feld muss eine gültige E-Mail-Adresse enthalten",
+    "minlength": "Erforderliche Länge ist {{requiredLength}}, aber erhalten {{actualLength}}",
+    "maxlength": "Maximale Länge ist {{requiredLength}}, aber erhalten {{actualLength}}",
+    "min": "Mindestwert ist {{min}}, aber erhalten {{actual}}",
+    "max": "Höchstwert ist {{max}}, aber erhalten {{actual}}"
+  },
+  "user-creation": "Benutzererstellung",
+  "user-creation-success": "Der Benutzer wurde erfolgreich erstellt",
+  "user-creation-failure": "Der Benutzer konnte nicht erstellt werden"
 }

@@ -8,5 +8,29 @@
   "links": {
     "users": "Users",
     "boards": "Boards"
-  }
+  },
+  "user-roles": {
+    "user": "User",
+    "admin": "Admin"
+  },
+  "user-create-form": {
+    "password": "Password",
+    "name": "Name of the new user",
+    "user-role": "User role"
+  },
+  "create-user": "Create user",
+  "select-avatar": "Select an avatar",
+  "select-avatar-error": "Please select an avatar",
+  "create": "Create",
+  "validation-errors": {
+    "required": "This field is required",
+    "email": "Field must be a valid email",
+    "minlength": "Required length is {{requiredLength}}, but got {{actualLength}}",
+    "maxlength": "Max length is {{requiredLength}}, but got {{actualLength}}",
+    "min": "Min value is {{min}}, but got {{actual}}",
+    "max": "Max value is {{max}}, but got {{actual}}"
+  },
+  "user-creation": "User Creation",
+  "user-creation-success": "User has been created successfully",
+  "user-creation-failure": "User could not be created"
 }

@@ -24,10 +24,9 @@ import {
   selectIsLoading,
   Session,
 } from "@entities/session";
-import { Observable, of, Subscription } from "rxjs";
+import { Observable, of } from "rxjs";
 import { PublicHeaderComponent } from "./layouts/header/public-header/public-header.component";
 import { PrivateHeaderComponent } from "./layouts/header/private-header/private-header.component";
-import { ROUTER_PATHS } from "@shared/constants";
 
 @Component({
   selector: "app-root",

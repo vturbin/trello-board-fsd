@@ -1,9 +1,12 @@
 <div
   [ngClass]="vertical ? 'input-field-wrapper--vertical' : 'input-field-wrapper'"
 >
-  <label for="login" [style.width]="labelWidth" class="inline-field-label">{{
-    label
-  }}</label>
+  <label
+    for="login"
+    [style.width]="vertical ? 'auto' : labelWidth"
+    class="inline-field-label"
+    >{{ label }}</label
+  >
   <input
     type="text"
     pInputText
@@ -17,7 +20,10 @@
 </div>
 @if (ngControl.touched) {
   @for (error of ngControl.errors | keyvalue; track ngControl.errors) {
-    <div [style.margin-left]="vertical ? '0' : labelWidth" class="field-error">
+    <div
+      [style.margin-left]="vertical ? '0' : labelWidth"
+      class="field-error text-sm"
+    >
       {{ error | mapErrorToText }}
     </div>
   }

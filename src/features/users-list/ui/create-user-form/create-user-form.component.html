@@ -1,0 +1,52 @@
+<form [formGroup]="createUserFormGroup">
+  <div class="formgrid grid pt-2">
+    <div class="col field">
+      <app-text-field
+        formControlName="email"
+        label="Email"
+        class="mb-4"
+        [vertical]="true"
+      />
+      <app-text-field
+        formControlName="name"
+        [label]="'user-create-form.name' | translate"
+        [vertical]="true"
+      />
+    </div>
+    <div class="col field">
+      <app-password
+        formControlName="password"
+        class="mb-4"
+        [label]="'password-label' | translate"
+        [vertical]="true"
+      />
+      <app-dropdown
+        formControlName="role"
+        placeholder=""
+        optionLabel="label"
+        [label]="'user-create-form.user-role' | translate"
+        [vertical]="true"
+        [options]="userRoles"
+      />
+    </div>
+  </div>
+  <app-image-select
+    [label]="'select-avatar' | translate"
+    [images]="images"
+    [getSrc]="avatarUrl"
+    (onChange)="handleImageChange($event)"
+    [error]="
+      createUserFormGroup.controls.avatarId.touched
+        ? ('select-avatar-error' | translate)
+        : ''
+    "
+    [value]="createUserFormGroup.controls.avatarId.value"
+  />
+  <app-button
+    class="pt-4"
+    [style.width]="'100%'"
+    [loading]="(createUserService.isLoading$ | async) ?? false"
+    [label]="'create' | translate"
+    (onClick)="submitUser()"
+  />
+</form>

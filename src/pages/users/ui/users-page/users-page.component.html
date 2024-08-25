@@ -1,1 +1,7 @@
-<p>users-page works!</p>,
+<h1 class="text-3xl mb-6">{{ "links.users" | translate }}</h1>
+@if ((userAbilityService.ability$ | async)?.can("create", "User")) {
+  <h2 class="text-lg mb-2 font-semibold">
+    {{ "create-user" | translate }}
+  </h2>
+  <app-create-user-form></app-create-user-form>
+}

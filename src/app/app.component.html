@@ -5,8 +5,10 @@
   <app-public-header />
 }
 
-<main class="flex-grow flex flex-col justify-content-center">
-  <router-outlet></router-outlet>
+<main class="flex-grow-1 flex flex-column max-w-1000 mx-auto">
+  <div class="container py-5 px-5">
+    <router-outlet></router-outlet>
+  </div>
 </main>
 
 <app-page-spinner [isLoading]="pageLoading$ | async"> </app-page-spinner>
