@@ -1,11 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import {
-  loadUsers,
-  selectAllUsers,
-  User,
-  UserPreviewComponent,
-} from "@entities/user";
+import { selectAllUsers, User, UserPreviewComponent } from "@entities/user";
 import { UsersListAbilityService } from "@features/users-list";
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
@@ -26,8 +21,6 @@ export class UserListComponent {
     private store: Store,
     protected userAbilityService: UsersListAbilityService,
   ) {
-    this.store.dispatch(loadUsers());
     this.users$ = this.store.select(selectAllUsers);
-    // this.users$.subscribe(users => console.log(users));
   }
 }

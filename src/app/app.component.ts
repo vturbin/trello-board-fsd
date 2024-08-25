@@ -8,7 +8,7 @@ import { IconComponent } from "../shared/ui/icon/icon.component";
 import { SpinnerComponent } from "../shared/ui/spinner/spinner.component";
 import { PageSpinnerComponent } from "../shared/ui/page-spinner/page-spinner.component";
 import { DropdownComponent } from "../shared/ui/dropdown/dropdown.component";
-import { CommonModule } from "@angular/common";
+import { AsyncPipe, CommonModule } from "@angular/common";
 import { HeaderComponent } from "../shared/ui/header/header.component";
 import { ImageSelectComponent } from "../shared/ui/image-select/image-select.component";
 import { ModalComponent } from "../shared/ui/modal/modal.component";
@@ -24,32 +24,20 @@ import {
   selectIsLoading,
   Session,
 } from "@entities/session";
-import { Observable, of } from "rxjs";
+import { filter, Observable, of, take } from "rxjs";
 import { PublicHeaderComponent } from "./layouts/header/public-header/public-header.component";
 import { PrivateHeaderComponent } from "./layouts/header/private-header/private-header.component";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
+import { PrivateLoaderService } from "./private-loader.service";
 
 @Component({
   selector: "app-root",
   standalone: true,
   imports: [
     RouterOutlet,
-    TextFieldComponent,
-    ReactiveFormsModule,
-    ButtonComponent,
-    LogoComponent,
-    IconComponent,
-    SpinnerComponent,
-    PageSpinnerComponent,
-    DropdownComponent,
-    CommonModule,
-    HeaderComponent,
-    ImageSelectComponent,
-    ModalComponent,
-    ButtonModule,
-    MultiselectComponent,
     TranslateModule,
-    PasswordComponent,
+    AsyncPipe,
+    PageSpinnerComponent,
     PublicHeaderComponent,
     PrivateHeaderComponent,
     ToastModule,
@@ -65,10 +53,17 @@ export class AppComponent implements OnInit {
   constructor(
     private translateService: TranslateService,
     private store: Store,
+    private privateLoader: PrivateLoaderService,
   ) {
     this.store.dispatch(loadSession());
     this.pageLoading$ = this.store.select(selectIsLoading);
     this.session$ = this.store.select(selectCurrentSession);
+    this.session$
+      .pipe(
+        filter(session => session !== undefined),
+        take(1),
+      )
+      .subscribe(() => this.privateLoader.loadAll());
   }
 
   ngOnInit(): void {

@@ -1,0 +1,10 @@
+<app-button
+  [label]="'new-board' | translate"
+  (onClick)="modelOpen = true"
+></app-button>
+@if (modelOpen) {
+  <app-create-board-modal
+    (onModalClose)="modelOpen = false"
+    [isModalVisible]="modelOpen"
+  ></app-create-board-modal>
+}

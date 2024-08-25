@@ -5,21 +5,25 @@
   [draggable]="false"
   (onHide)="closeModal()"
 >
-  <ng-container *ngIf="headerTemplate">
-    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
-  </ng-container>
+  <ng-template pTemplate="header">
+    <ng-container *ngIf="headerTemplate">
+      <ng-template *ngTemplateOutlet="headerTemplate"></ng-template>
+    </ng-container>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <ng-container *ngIf="bodyTemplate">
+      <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+    </ng-container>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <ng-container *ngIf="footerTemplate">
+      <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+    </ng-container>
 
-  <ng-container *ngIf="bodyTemplate">
-    <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
-  </ng-container>
-
-  <ng-container *ngIf="footerTemplate">
-    <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
-  </ng-container>
-
-  <ng-container *ngIf="!footerTemplate">
-    <div class="flex justify-content-end flex-wrap">
-      <app-button label="Close" (onClick)="closeModal()"></app-button>
-    </div>
-  </ng-container>
+    <ng-container *ngIf="!footerTemplate">
+      <div class="flex justify-content-end flex-wrap">
+        <app-button label="Close" (onClick)="closeModal()"></app-button>
+      </div>
+    </ng-container>
+  </ng-template>
 </p-dialog>

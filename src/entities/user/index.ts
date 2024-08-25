@@ -5,4 +5,4 @@ export * from "./model/types";
 export * from "./ui/get-avatar-url";
 export * from "./model/effects";
 export * from "./model/store";
-export { UserPreviewComponent } from "./ui/user-preview/user-preview.component";
+export * from "./ui/user-preview/user-preview.component";

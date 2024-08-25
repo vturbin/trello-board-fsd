@@ -42,5 +42,11 @@
   "user-deletion": "Benutzer Entfernen",
   "user-deletion-success": "Der Benutzer wurde erfolgreich gelöscht",
   "user-deletion-failure": "Der Benutzer konnte nicht gelöscht werden",
-  "all-users": "Alle Benutzer"
+  "all-users": "Alle Benutzer",
+  "create-board": "Board erstellen",
+  "board-name": "Boardname",
+  "select-editors": "Editoren auswählen",
+  "cancel": "Abbrechen",
+  "new-board": "Neues Board",
+  "all-boards": "Alle Boards"
 }

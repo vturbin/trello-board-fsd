@@ -42,5 +42,11 @@
   "user-deletion": "User Deletion",
   "user-deletion-success": "User has been deleted successfully",
   "user-deletion-failure": "User could not be deleted",
-  "all-users": "All users"
+  "all-users": "All users",
+  "create-board": "Create board",
+  "board-name": "Board name",
+  "select-editors": "Select editors",
+  "cancel": "Cancel",
+  "new-board": "New Board",
+  "all-boards": "All boards"
 }
