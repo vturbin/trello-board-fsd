@@ -22,6 +22,7 @@
   "select-avatar": "Avatar auswählen",
   "select-avatar-error": "Bitte Avatar auswählen",
   "create": "Anlegen",
+  "update": "Aktualisieren",
   "validation-errors": {
     "required": "Dieses Feld ist erforderlich",
     "email": "Das Feld muss eine gültige E-Mail-Adresse enthalten",
@@ -48,5 +49,8 @@
   "select-editors": "Editoren auswählen",
   "cancel": "Abbrechen",
   "new-board": "Neues Board",
-  "all-boards": "Alle Boards"
+  "all-boards": "Alle Boards",
+  "name": "Name",
+  "admin": "Admin",
+  "editors": "Editoren"
 }

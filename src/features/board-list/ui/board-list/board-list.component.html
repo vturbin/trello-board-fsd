@@ -1,0 +1,53 @@
+<div>
+  <h2 class="text-lg mb-4 font-semibold">{{ "all-boards" | translate }}</h2>
+  <table class="w-full">
+    <thead>
+      <tr>
+        <th class="text-left">{{ "name" | translate }}:</th>
+        <th class="text-left">{{ "admin" | translate }}:</th>
+        <th class="text-left">{{ "editors" | translate }}:</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @if ((boardsLoading$ | async) || !userMap.size) {
+        <tr [style.height]="'100px'">
+          <td colspan="3" class="text-center w-full">
+            <app-spinner></app-spinner>
+          </td>
+        </tr>
+      }
+
+      @if ((boards$ | async) && userMap.size > 0) {
+        @for (board of boards$ | async; track board) {
+          <tr class="px-5 py-2 border-bottom-1 border-200">
+            <td class="py-2 pr-2">
+              <a [routerLink]="getBoardUrl(board.id)" class="p-link link">
+                {{ board.name }}
+              </a>
+            </td>
+            <td class="py-2 pr-2">
+              <app-user-preview
+                [name]="userMap.get(board.ownerId)!.name"
+                [avatarId]="userMap.get(board.ownerId)!.avatarId"
+                [size]="'sm'"
+              />
+            </td>
+            <td class="py-2 pr-2">
+              <app-avatar-list [avatarIds]="getAvatarIds(board)" />
+            </td>
+            <td className="p-2">
+              <div className="flex gap-2 ml-auto">
+                @if (canUpdateBoard(board)) {
+                  <app-update-board-button
+                    [board]="board"
+                  ></app-update-board-button>
+                }
+              </div>
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

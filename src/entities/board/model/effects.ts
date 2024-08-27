@@ -1,14 +1,21 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Store, select } from '@ngrx/store';
-import { from, of } from 'rxjs';
-import { catchError, map, mergeMap, switchMap } from 'rxjs/operators';
-import { nanoid } from 'nanoid';
-import * as BoardActions from './actions';
+import { Injectable } from "@angular/core";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
+import { Store, select } from "@ngrx/store";
+import { from, of } from "rxjs";
+import {
+  catchError,
+  map,
+  mergeMap,
+  switchMap,
+  take,
+  tap,
+} from "rxjs/operators";
+import { nanoid } from "nanoid";
+import * as BoardActions from "./actions";
 
-import { api } from '../../../shared/api';
-import { BoardState } from './store';
-import { selectBoardById } from './selectors';
+import { api } from "../../../shared/api";
+import { BoardState } from "./store";
+import { selectBoardById } from "./selectors";
 
 @Injectable()
 export class BoardEffects {
@@ -48,11 +55,12 @@ export class BoardEffects {
       switchMap(({ id, data }) =>
         this.store.pipe(
           select(selectBoardById(id)),
+          take(1), // Only take the first emission and ignore subsequent ones
           switchMap(board => {
             if (!board) {
               // Return an error action if the board is not found
               return of(
-                BoardActions.updateBoardFailure({ error: 'Board not found' }),
+                BoardActions.updateBoardFailure({ error: "Board not found" }),
               );
             }
             const updatedBoard = {

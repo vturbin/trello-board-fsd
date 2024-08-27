@@ -1,0 +1,5 @@
+<div class="flex">
+  @for (avatarId of avatarIds; track avatarId) {
+    <img [src]="getAvatarUrl(avatarId)" class="-mr-2 w-2rem h-2rem" />
+  }
+</div>

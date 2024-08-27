@@ -1,0 +1,13 @@
+<app-button
+  [icon]="icons.PENCIL"
+  [displayAsIcon]="true"
+  [severity]="buttonSeverity.None"
+  (onClick)="modelOpen = true"
+></app-button>
+@if (modelOpen) {
+  <app-update-board-modal
+    (onModalClose)="modelOpen = false"
+    [isModalVisible]="modelOpen"
+    [board]="board"
+  ></app-update-board-modal>
+}

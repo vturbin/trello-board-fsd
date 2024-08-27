@@ -1,0 +1,46 @@
+<app-modal [display]="isModalVisible" (onClose)="onModalClose.emit()">
+  <ng-template #header>
+    <h3>{{ "create-board" | translate }}</h3>
+  </ng-template>
+
+  <ng-template #body>
+    <form [formGroup]="updateBoardForm" class="flex gap-3 flex-column">
+      <app-text-field
+        formControlName="name"
+        [label]="'board-name' | translate"
+        [vertical]="true"
+      ></app-text-field>
+      <app-dropdown
+        formControlName="ownerId"
+        [label]="'admin' | translate"
+        placeholder=""
+        optionLabel="name"
+        [vertical]="true"
+        [options]="(userSelection$ | async) ?? []"
+      ></app-dropdown>
+      <app-multiselect
+        placeholder=""
+        optionLabel="name"
+        formControlName="editorsIds"
+        [label]="'select-editors' | translate"
+        [vertical]="true"
+        [options]="(userSelection$ | async) ?? []"
+        [clearable]="true"
+      ></app-multiselect>
+    </form>
+  </ng-template>
+
+  <ng-template #footer>
+    <div class="flex justify-content-end flex-wrap gap-2">
+      <app-button
+        (onClick)="onModalClose.emit()"
+        [label]="'cancel' | translate"
+        [outlined]="true"
+      ></app-button>
+      <app-button
+        (onClick)="update()"
+        [label]="'update' | translate"
+      ></app-button>
+    </div>
+  </ng-template>
+</app-modal>
