@@ -12,8 +12,8 @@
     <tbody>
       @if ((boardsLoading$ | async) || !userMap.size) {
         <tr [style.height]="'100px'">
-          <td colspan="3" class="text-center w-full">
-            <app-spinner></app-spinner>
+          <td colspan="3" class="text-center">
+            <app-spinner [color]="'#ef4444'" [fontSize]="'2rem'"></app-spinner>
           </td>
         </tr>
       }
@@ -36,12 +36,17 @@
             <td class="py-2 pr-2">
               <app-avatar-list [avatarIds]="getAvatarIds(board)" />
             </td>
-            <td className="p-2">
-              <div className="flex gap-2 ml-auto">
+            <td class="p-2">
+              <div class="flex justify-content-end flex-wrap">
                 @if (canUpdateBoard(board)) {
                   <app-update-board-button
                     [board]="board"
                   ></app-update-board-button>
+                }
+                @if (canDeleteBoard(board)) {
+                  <app-remove-board-button
+                    [boardId]="board.id"
+                  ></app-remove-board-button>
                 }
               </div>
             </td>

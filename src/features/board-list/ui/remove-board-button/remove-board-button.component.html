@@ -1,0 +1,20 @@
+<!-- @if (removeBoardService.isLoading$ | async) {
+  <app-spinner
+    [color]="'#ef4444'"
+    class="pr-3"
+    [fontSize]="'1.25rem'"
+  ></app-spinner>
+} @else {
+  <app-button
+    [icon]="icons.TRASH"
+    [displayAsIcon]="true"
+    [severity]="buttonSeverity.Danger"
+    (onClick)="removeBoard()"
+  ></app-button>
+} -->
+<app-button
+  [icon]="icons.TRASH"
+  [displayAsIcon]="true"
+  [severity]="buttonSeverity.Danger"
+  (onClick)="removeBoard()"
+></app-button>

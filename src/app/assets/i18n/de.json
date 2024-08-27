@@ -37,10 +37,10 @@
   "yes": "Ja",
   "no": "Nein",
   "remove-user-confirmation": {
-    "header": "Benutzer entfernen",
+    "header": "Benutzer löschen",
     "message": "Sind Sie sicher, dass Sie den Benutzer löschen möchten?"
   },
-  "user-deletion": "Benutzer Entfernen",
+  "user-deletion": "Benutzer löschen",
   "user-deletion-success": "Der Benutzer wurde erfolgreich gelöscht",
   "user-deletion-failure": "Der Benutzer konnte nicht gelöscht werden",
   "all-users": "Alle Benutzer",
@@ -52,5 +52,12 @@
   "all-boards": "Alle Boards",
   "name": "Name",
   "admin": "Admin",
-  "editors": "Editoren"
+  "editors": "Editoren",
+  "remove-board-confirmation": {
+    "header": "Board löschen",
+    "message": "Sind Sie sicher, dass Sie dieses Board löschen möchten?"
+  },
+  "board-deletion": "Board löschen",
+  "board-deletion-success": "Das Board wurde erfolgreich gelöscht",
+  "board-deletion-failure": "Das Board konnte nicht gelöscht werden"
 }

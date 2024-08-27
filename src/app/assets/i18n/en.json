@@ -40,7 +40,7 @@
     "header": "Remove User",
     "message": "Are you sure you want to delete user?"
   },
-  "user-deletion": "User Deletion",
+  "user-deletion": "User Removal",
   "user-deletion-success": "User has been deleted successfully",
   "user-deletion-failure": "User could not be deleted",
   "all-users": "All users",
@@ -52,5 +52,12 @@
   "all-boards": "All boards",
   "name": "Name",
   "admin": "Admin",
-  "editors": "Editors"
+  "editors": "Editors",
+  "remove-board-confirmation": {
+    "header": "Remove Board",
+    "message": "Are you sure you want to delete this board?"
+  },
+  "board-deletion": "Board Removal",
+  "board-deletion-success": "Board has been deleted successfully",
+  "board-deletion-failure": "Board could not be deleted"
 }

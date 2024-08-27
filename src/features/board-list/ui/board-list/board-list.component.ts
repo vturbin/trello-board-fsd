@@ -21,6 +21,7 @@ import { ROUTER_PATHS } from "@shared/constants";
 import { Observable, Subscription } from "rxjs";
 import { UpdateBoardButtonComponent } from "../update-board-button/update-board-button.component";
 import { SpinnerComponent } from "@shared/ui/spinner";
+import { RemoveBoardButtonComponent } from "../remove-board-button/remove-board-button.component";
 
 @Component({
   selector: "app-board-list",
@@ -32,6 +33,7 @@ import { SpinnerComponent } from "@shared/ui/spinner";
     UserPreviewComponent,
     AvatarListComponent,
     UpdateBoardButtonComponent,
+    RemoveBoardButtonComponent,
     SpinnerComponent,
   ],
   providers: [BoardListAbilityService],
@@ -84,6 +86,15 @@ export class BoardListComponent implements OnDestroy {
     return (
       this.abilities?.can(
         "update",
+        subject("Board", { ownerId: board.ownerId }),
+      ) ?? false
+    );
+  }
+
+  public canDeleteBoard(board: BoardPartial): boolean {
+    return (
+      this.abilities?.can(
+        "delete",
         subject("Board", { ownerId: board.ownerId }),
       ) ?? false
     );
