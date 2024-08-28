@@ -21,6 +21,7 @@ import { TasksEffects, tasksReducer } from "@entities/task";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
 import { Ability, PureAbility } from "@casl/ability";
 import { AbilityService } from "@casl/angular";
+import { languageReducer } from "@features/i18n";
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
@@ -37,6 +38,7 @@ export const appConfig: ApplicationConfig = {
       session: sessionReducer,
       boards: boardReducer,
       task: tasksReducer,
+      language: languageReducer,
     }),
     provideEffects([UsersEffects, SessionEffects, TasksEffects, BoardEffects]),
     ToastService,

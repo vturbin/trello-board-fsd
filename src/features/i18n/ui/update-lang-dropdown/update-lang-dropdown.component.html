@@ -1,0 +1,7 @@
+<app-dropdown
+  [(ngModel)]="currentSelection"
+  placeholder=""
+  optionLabel="label"
+  [options]="languages"
+  (onSelect)="updateLanguage($event)"
+></app-dropdown>

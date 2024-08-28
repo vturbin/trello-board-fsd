@@ -1,23 +1,23 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
   Output,
-} from '@angular/core';
-import { DropdownModule } from 'primeng/dropdown';
-import { NoopValueAccessorDirective } from '../../utils/directives/NoopValueAccessorDirective';
-import { injectNgControl } from '../../utils/ng-control-injector';
-import { ReactiveFormsModule } from '@angular/forms';
+} from "@angular/core";
+import { DropdownModule } from "primeng/dropdown";
+import { NoopValueAccessorDirective } from "../../utils/directives/NoopValueAccessorDirective";
+import { injectNgControl } from "../../utils/ng-control-injector";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-dropdown',
+  selector: "app-dropdown",
   standalone: true,
   imports: [CommonModule, DropdownModule, ReactiveFormsModule],
   hostDirectives: [NoopValueAccessorDirective],
-  templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.scss',
+  templateUrl: "./dropdown.component.html",
+  styleUrl: "./dropdown.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownComponent<T> {
@@ -31,7 +31,7 @@ export class DropdownComponent<T> {
 
   @Input() public label?: string;
 
-  @Input() public labelWidth = '7rem';
+  @Input() public labelWidth = "7rem";
 
   @Input() public clearable?: boolean;
 

@@ -6,6 +6,7 @@ import { TranslateModule } from "@ngx-translate/core";
 import { ROUTER_PATHS } from "@shared/constants";
 import { HeaderComponent } from "@shared/ui/header";
 import { ProfileComponent } from "../profile/profile.component";
+import { UpdateLangDropdownComponent } from "@features/i18n";
 
 @Component({
   selector: "app-private-header",
@@ -17,6 +18,7 @@ import { ProfileComponent } from "../profile/profile.component";
     TranslateModule,
     SignOutButtonComponent,
     ProfileComponent,
+    UpdateLangDropdownComponent,
   ],
   templateUrl: "./private-header.component.html",
   styleUrl: "./private-header.component.scss",

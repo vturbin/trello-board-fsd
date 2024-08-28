@@ -1,12 +1,16 @@
 <div
   [ngClass]="vertical ? 'input-field-wrapper--vertical' : 'input-field-wrapper'"
 >
-  <label
-    for="login"
-    [style.width]="labelWidth"
-    [ngClass]="vertical ? 'inline-field-label--vertical' : 'inline-field-label'"
-    >{{ label }}</label
-  >
+  @if (label) {
+    <label
+      for="login"
+      [style.width]="labelWidth"
+      [ngClass]="
+        vertical ? 'inline-field-label--vertical' : 'inline-field-label'
+      "
+      >{{ label }}</label
+    >
+  }
   <p-dropdown
     styleClass="field-input"
     [options]="options"

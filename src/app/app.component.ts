@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router, RouterOutlet } from "@angular/router";
 import { PageSpinnerComponent } from "../shared/ui/page-spinner/page-spinner.component";
 import { AsyncPipe } from "@angular/common";
@@ -11,11 +11,12 @@ import {
   selectIsLoading,
   Session,
 } from "@entities/session";
-import { filter, Observable, of, take } from "rxjs";
+import { filter, Observable, of, Subscription, take } from "rxjs";
 import { PublicHeaderComponent } from "./layouts/public-header/public-header.component";
 import { PrivateHeaderComponent } from "./layouts/private-layout/ui/private-header/private-header.component";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { PrivateLoaderService } from "./private-loader.service";
+import { Lang, selectLanguage } from "@features/i18n";
 
 @Component({
   selector: "app-root",
@@ -33,9 +34,11 @@ import { PrivateLoaderService } from "./private-loader.service";
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnDestroy {
   protected pageLoading$: Observable<boolean> = of(true);
   protected session$: Observable<Session | undefined>;
+
+  private subscription = new Subscription();
 
   constructor(
     private translateService: TranslateService,
@@ -45,6 +48,14 @@ export class AppComponent implements OnInit {
     this.store.dispatch(loadSession());
     this.pageLoading$ = this.store.select(selectIsLoading);
     this.session$ = this.store.select(selectCurrentSession);
+
+    this.subscription.add(
+      this.store.select(selectLanguage).subscribe(language => {
+        console.log(language);
+        this.translateService.setDefaultLang(language);
+      }),
+    );
+
     this.session$
       .pipe(
         filter(session => session !== undefined),
@@ -53,23 +64,7 @@ export class AppComponent implements OnInit {
       .subscribe(() => this.privateLoader.loadAll());
   }
 
-  ngOnInit(): void {
-    const languageTag = this.getBrowserLanguage();
-    const language = languageTag.split("-")[0]; //"en","de", etc.
-    const defaultLanguage = this.getDefaultLanguage(language);
-    this.translateService.setDefaultLang(defaultLanguage);
-  }
-
-  getBrowserLanguage() {
-    return navigator.language;
-  }
-
-  getDefaultLanguage(language: string) {
-    const availableLanguages = ["en", "de"];
-    if (availableLanguages.includes(language)) {
-      return language;
-    } else {
-      return "en";
-    }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
