@@ -22,7 +22,7 @@ export class RemoveBoardButtonComponent {
 
   public readonly buttonSeverity = ButtonSeverity;
 
-  public constructor(private removeBoardService: RemoveBoardService) {}
+  public constructor(protected removeBoardService: RemoveBoardService) {}
 
   public removeBoard(): void {
     this.removeBoardService.remove(this.boardId);

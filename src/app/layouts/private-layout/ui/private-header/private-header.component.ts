@@ -5,6 +5,7 @@ import { SignOutButtonComponent } from "@features/auth";
 import { TranslateModule } from "@ngx-translate/core";
 import { ROUTER_PATHS } from "@shared/constants";
 import { HeaderComponent } from "@shared/ui/header";
+import { ProfileComponent } from "../profile/profile.component";
 
 @Component({
   selector: "app-private-header",
@@ -15,6 +16,7 @@ import { HeaderComponent } from "@shared/ui/header";
     RouterModule,
     TranslateModule,
     SignOutButtonComponent,
+    ProfileComponent,
   ],
   templateUrl: "./private-header.component.html",
   styleUrl: "./private-header.component.scss",

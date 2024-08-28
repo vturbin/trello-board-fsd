@@ -1,0 +1,5 @@
+<img
+  class="w-2 h-2"
+  [src]="getAvatarUrl((currentSession$ | async)!.avatarId)"
+/>
+<span class="text-md">{{ (currentSession$ | async)!.name }}</span>
