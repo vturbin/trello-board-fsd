@@ -43,7 +43,7 @@ export const getHandlers = async () => {
   const users = await usersRepository.getUsers();
   if (users.length === 0) {
     await usersRepository.addUser({
-      name: "Администрюк",
+      name: "Admin",
       email: "admin@gmail.com",
       password: "admin",
       role: "admin",
@@ -216,7 +216,7 @@ export const getHandlers = async () => {
       const boards = await boardsRepository.getBoards();
 
       const boardsToShow = boards.filter(
-        (board) =>
+        board =>
           board.ownerId === sesson.userId ||
           board.editorsIds.includes(sesson.userId),
       );
